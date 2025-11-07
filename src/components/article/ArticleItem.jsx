@@ -6,18 +6,17 @@ import "./ArticleItem.css";
 
 import img1 from '../../assets/images/1.jpg'
 
-const ArticleItem = () => {
+const ArticleItem = (props) => {
   return (
     <Card>
       <Card.Img
         variant="top"
-        src={img1}
+        src={props.image}
       />
       <Card.Body dir="rtl">
-        <Card.Title className="py-2">عنوان مقاله اول</Card.Title>
+        <Card.Title className="py-2">{props.title}</Card.Title>
         <Card.Text>
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-          از طراحان گرافیک است
+          {props.desc}
         </Card.Text>
         <span className="read-more">
           <span>ادامه مقاله</span>
@@ -25,10 +24,10 @@ const ArticleItem = () => {
         </span>
       </Card.Body>
       <Card.Footer className="d-flex justify-content-between align-items-center py-3">
-        <span>نویسنده : میلاد</span>
+        <span>نویسنده : {props.writter}</span>
         <span>
           {" "}
-          <BiTimeFive /> 5 دقیقه
+          <BiTimeFive /> {props.readingTime} دقیقه
         </span>
       </Card.Footer>
     </Card>
