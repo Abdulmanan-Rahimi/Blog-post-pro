@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import MyNavbar from "../../components/navbar/MyNavbar";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./AddArticle.css";
+import axios from "axios";
 
 const AddArticle = () => {
+  const [formData, setFormData] = useState({});
+
   const addArticleHandler = () => {
-    console.log("new article added");
-    
-  }
+    axios.post("http://localhost:5000/articles", formData);
+  };
+
+  const formHandler = (e, propertyName) => {
+    setFormData({ ...formData, [propertyName]: e.target.value });
+  };
+
   return (
     <>
       <MyNavbar />
@@ -16,12 +23,17 @@ const AddArticle = () => {
         <Form>
           <Form.Group className="mb-3">
             <Form.Label>عنوان مقاله</Form.Label>
-            <Form.Control type="text" placeholder="عنوان مقاله را وارد کنید" />
+            <Form.Control
+              onChange={(e) => formHandler(e, "title")}
+              type="text"
+              placeholder="عنوان مقاله را وارد کنید"
+            />
           </Form.Group>
 
           <Form.Group className="mb-3">
             <Form.Label>توضیح کوتاه</Form.Label>
             <Form.Control
+              onChange={(e) => formHandler(e, "desc")}
               type="text"
               placeholder="یه توضیح کوتاه در مورد مقاله وارد کنید"
             />
@@ -30,6 +42,7 @@ const AddArticle = () => {
           <Form.Group className="mb-3">
             <Form.Label>نویسنده مقاله</Form.Label>
             <Form.Control
+              onChange={(e) => formHandler(e, "writter")}
               type="text"
               placeholder="نام نویسنده مقاله را وارد کنید"
             />
@@ -37,17 +50,29 @@ const AddArticle = () => {
 
           <Form.Group className="mb-3">
             <Form.Label>موضوع مقاله</Form.Label>
-            <Form.Control type="text" placeholder="موضوع مقاله را وارد کنید" />
+            <Form.Control
+              onChange={(e) => formHandler(e, "category")}
+              type="text"
+              placeholder="موضوع مقاله را وارد کنید"
+            />
           </Form.Group>
 
           <Form.Group className="mb-3">
             <Form.Label>عکس مقاله</Form.Label>
-            <Form.Control type="text" placeholder="عکس مقاله را وارد کنید" />
+            <Form.Control
+              onChange={(e) => formHandler(e, "image")}
+              type="text"
+              placeholder="عکس مقاله را وارد کنید"
+            />
           </Form.Group>
 
           <Form.Group className="mb-3">
             <Form.Label>مدت زمان خواندن</Form.Label>
-            <Form.Control dir="rtl" type="number" placeholder=""/>
+            <Form.Control
+              onChange={(e) => formHandler(e, "readingTime")}
+              type="number"
+              placeholder=""
+            />
           </Form.Group>
 
           <Button onClick={addArticleHandler} variant="primary" type="button">
