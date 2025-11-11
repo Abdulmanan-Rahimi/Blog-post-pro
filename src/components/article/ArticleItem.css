@@ -4,7 +4,6 @@
   transition: all 0.5s;
   display: flex;
   direction: rtl;
-  
 }
 .card:hover {
   scale: 1.05;
@@ -22,4 +21,9 @@
 }
 .card-footer {
   color: #666 !important;
+}
+
+.card a {
+  text-decoration: none;
+  color: #484848;
 }
