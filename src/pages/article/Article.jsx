@@ -1,22 +1,46 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import MyNavbar from "../../components/navbar/MyNavbar";
 import { BsPencilSquare } from "react-icons/bs";
 import { BiTimeFive, BiCategoryAlt } from "react-icons/bi";
 import { MdDelete, MdOutlineEditCalendar } from "react-icons/md";
 import "./Article.css";
+import Swal from "sweetalert2";
+
 
 const Article = () => {
   const articleId = useParams().articleId;
   const [articleData, setArticleData] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
       .get(`http://localhost:5000/articles/${articleId}`)
       .then((response) => setArticleData(response.data));
   });
+
+  const deleteArticleHandler = (id) => {
+    Swal.fire({
+      title: "مطمئنی میخوای مقاله رو حذف کنی؟",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "آره حذفش کن",
+      cancelButtonText: "نه",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "مقاله با موفقیت حذف شد",
+          icon: "success",
+        });
+        axios.delete(`http://localhost:5000/articles/${id}`);
+        navigate("/");
+      }
+    });
+  };
 
   return (
     <>
@@ -44,7 +68,10 @@ const Article = () => {
                 </p>
               </div>
               <div className="cardFooter">
-                <Button variant="outline-danger">
+                <Button
+                  onClick={() => deleteArticleHandler(articleId)}
+                  variant="outline-danger"
+                >
                   <MdDelete size="25px" /> حذف مقاله
                 </Button>
                 <Button variant="outline-primary">
