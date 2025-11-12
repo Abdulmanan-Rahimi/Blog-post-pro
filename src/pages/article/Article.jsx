@@ -21,6 +21,11 @@ const Article = () => {
       .then((response) => setArticleData(response.data));
   });
 
+  const editArticleHandler = (articleId) => {
+    navigate(`/edit-article/${articleId}`)
+    
+  }
+
   const deleteArticleHandler = (id) => {
     Swal.fire({
       title: "مطمئنی میخوای مقاله رو حذف کنی؟",
@@ -74,7 +79,7 @@ const Article = () => {
                 >
                   <MdDelete size="25px" /> حذف مقاله
                 </Button>
-                <Button variant="outline-primary">
+                <Button onClick={ () => editArticleHandler(articleId)} variant="outline-primary">
                   <MdOutlineEditCalendar size="25px" /> ویرایش مقاله
                 </Button>
               </div>
