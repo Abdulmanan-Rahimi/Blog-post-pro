@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MyNavbar from "../../components/navbar/MyNavbar";
 import { Form, Button } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 const EditArticle = () => {
   const [articleData, setArticleData] = useState({});
@@ -15,12 +16,18 @@ const EditArticle = () => {
   }, []);
 
   const editArticleHandler = () => {
+    axios.put(`http://localhost:5000/articles/${articleId}`, articleData);
+    Swal.fire({
+      title: "مقاله با موفقیت ویرایش شد",
+      timer: 1500,
+      timerProgressBar: true,
+      showConfirmButton: false,
+    });
+  };
 
-  }
-
-  const formHandler = () => {
-
-  }
+  const formHandler = (e) => {
+    setArticleData({ ...articleData, [e.target.name]: e.target.value });
+  };
 
   return (
     <>
