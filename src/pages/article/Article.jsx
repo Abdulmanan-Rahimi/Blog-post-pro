@@ -1,14 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import MyNavbar from "../../components/navbar/MyNavbar";
 import { BsPencilSquare } from "react-icons/bs";
 import { BiTimeFive, BiCategoryAlt } from "react-icons/bi";
 import { MdDelete, MdOutlineEditCalendar } from "react-icons/md";
 import "./Article.css";
 import Swal from "sweetalert2";
-
 
 const Article = () => {
   const articleId = useParams().articleId;
@@ -20,11 +19,6 @@ const Article = () => {
       .get(`http://localhost:5000/articles/${articleId}`)
       .then((response) => setArticleData(response.data));
   });
-
-  const editArticleHandler = (articleId) => {
-    navigate(`/edit-article/${articleId}`)
-    
-  }
 
   const deleteArticleHandler = (id) => {
     Swal.fire({
@@ -79,9 +73,11 @@ const Article = () => {
                 >
                   <MdDelete size="25px" /> حذف مقاله
                 </Button>
-                <Button onClick={ () => editArticleHandler(articleId)} variant="outline-primary">
-                  <MdOutlineEditCalendar size="25px" /> ویرایش مقاله
-                </Button>
+                <Link to={`/edit-article/${articleId}`}>
+                  <Button variant="outline-primary">
+                    <MdOutlineEditCalendar size="25px" /> ویرایش مقاله
+                  </Button>
+                </Link>
               </div>
             </div>
           </Col>
