@@ -4,7 +4,7 @@
       "id": "1",
       "title": "عنوان مقاله اول",
       "desc": "در این بخش میخواهیم راحع به هوش مصنوعی کار کنیم که یک بخش بسیار مهم و ضروری است ",
-      "image": "src/assets/images/1.jpg",
+      "image": "https://dl.next1code.ir/images/react/article1.webp",
       "readingTime": 5,
       "category": "هوش مصنوعی",
       "writter": "استاد رحیمی"
@@ -13,7 +13,7 @@
       "id": "2",
       "title": "عنوان مقاله دوم",
       "desc": "در این بخش میخواهیم راحع به  هکری کار کنیم که یک بخش بسیار مهم و ضروری است ",
-      "image": "src/assets/images/2.jpg",
+      "image": "https://dl.next1code.ir/images/react/article2.webp",
       "readingTime": 7,
       "category": " رایطه کاربری",
       "writter": "استاد حیدری"
@@ -22,7 +22,7 @@
       "id": "3",
       "title": "عنوان مقاله سوم",
       "desc": "در این بخش میخواهیم راحع به  کد نویسی کار کنیم که یک بخش بسیار مهم و ضروری است ",
-      "image": "src/assets/images/3.jpg",
+      "image": "https://dl.next1code.ir/images/react/article3.webp",
       "readingTime": 9,
       "category": "طراحی وب",
       "writter": "استاد یعقوبی"
@@ -31,7 +31,7 @@
       "id": "4",
       "title": "عنوان مقاله چهارم",
       "desc": "در این بخش میخواهیم راحع به آب وهوا  کار کنیم که یک بخش بسیار مهم و ضروری است ",
-      "image": "src/assets/images/4.jpg",
+      "image": "https://dl.next1code.ir/images/react/article4.webp",
       "readingTime": 3,
       "category": "برنامه نویسی",
       "writter": "استاد دانشیار"
@@ -40,7 +40,7 @@
       "id": "5",
       "title": "عنوان مقاله پنجم بسیار مهم است برای همه",
       "desc": "در این بخش میخواهیم راحع به  کشور کار کنیم که یک بخش بسیار مهم و ضروری است ",
-      "image": "src/assets/images/5.jpg",
+      "image": "https://dl.next1code.ir/images/react/article5.webp",
       "readingTime": 8,
       "category": "ساخت تابلو",
       "writter": "استاد رحیمی"
@@ -49,7 +49,7 @@
       "id": "6",
       "title": "عنوان مقاله ششم",
       "desc": "در این بخش میخواهیم راحع به  سواد کار کنیم که یک بخش بسیار مهم و ضروری است ",
-      "image": "src/assets/images/6.jpg",
+      "image": "https://dl.next1code.ir/images/react/article6.webp",
       "readingTime": 6,
       "category": "کد نویسی",
       "writter": "استاد احمدی"
@@ -58,7 +58,7 @@
       "id": "7",
       "title": "عنوان مقاله هفتم",
       "desc": "در این بخش میخواهیم راحع به  جهان کار کنیم که یک بخش بسیار مهم و ضروری است ",
-      "image": "src/assets/images/7.jpg",
+      "image": "https://dl.next1code.ir/images/react/article7.webp",
       "readingTime": 50,
       "category": "نقاشی",
       "writter": "استاد سروری"
@@ -67,19 +67,10 @@
       "id": "8",
       "title": "عنوان مقاله هشتم",
       "desc": "در این بخش میخواهیم راحع به  روزمره کار کنیم که یک بخش بسیار مهم و ضروری است ",
-      "image": "src/assets/images/8.jpg",
+      "image": "https://dl.next1code.ir/images/react/article8.webp",
       "readingTime": 5,
       "category": "کامپیوتر",
       "writter": "استاد کامبخش"
-    },
-    {
-      "id": "af61",
-      "title": "عنوان مقاله نهم",
-      "desc": "این مقاله درباره شرکت های هرات که به تازگی ساخته شده است بحث میکند",
-      "writter": "استاد کمالی",
-      "category": "شهرک صنعتی",
-      "image": "src/assets/images/2.jpg",
-      "readingTime": "7"
     }
   ]
 }
